@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Rajj 🎉</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #f9d5e5, #fbc7b8);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #4b2e83;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    header {
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #a02c73;
+      text-shadow: 1px 1px 2px #f9d5e5;
+      animation: floatUpText 1.5s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.5s;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #6d3c75;
+      margin-bottom: 2rem;
+      animation: floatUpText 1.5s ease-out forwards;
+      opacity: 0;
+      animation-delay: 1s;
+    }
+
+    .birthday-card,
+    .secret-card {
+      background: #fff3f7;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(160, 44, 115, 0.25);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .birthday-card h2,
+    .secret-card h2 {
+      font-weight: 700;
+      color: #d2528c;
+      margin-bottom: 1rem;
+    }
+
+    .birthday-card p {
+      font-size: 1.1rem;
+      color: #804060;
+      line-height: 1.5;
+    }
+
+    .my-everything-btn {
+      background-color: #a02c73;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      margin-top: 1.7rem;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .my-everything-btn:hover {
+      background-color: #802153;
+      text-decoration: none;
+      color: white;
+    }
+
+    .secret-card input {
+      border: 2px solid #a02c73;
+      border-radius: 50px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.1rem;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+    }
+
+    .result-box {
+      margin-top: 1.5rem;
+      font-size: 1.15rem;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    #myEverythingSection,
+    #myFavoritePhotosSection,
+    #keepItSafeSection {
+      display: none;
+      max-width: 800px;
+      margin: 2rem auto;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(184, 43, 98, 0.6);
+      text-align: center;
+      color: #880e4f;
+    }
+
+    @media (max-width: 768px) {
+
+      #myEverythingSection,
+      #myFavoritePhotosSection,
+      #keepItSafeSection {
+        padding: 0.5rem;
+        margin: 0.5rem auto;
+      }
+
+      .everything-card {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .everything-card p {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+
+      .photo-container {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 1.5rem;
+      }
+
+      #myEverythingSection h1,
+      #myFavoritePhotosSection h1,
+      #keepItSafeSection h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      #myEverythingSection>p,
+      #keepItSafeSection>p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0 auto 1.5rem;
+      }
+    }
+
+    #myEverythingSection h1,
+    #myFavoritePhotosSection h1,
+    #keepItSafeSection h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 3px #fce4ec;
+    }
+
+    .everything-card {
+      background: #fff3f7;
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(160, 44, 115, 0.2);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      margin-left: 20px;
+      margin-right: 20px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .everything-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(160, 44, 115, 0.3);
+    }
+
+    .everything-card h2 {
+      font-weight: 700;
+      color: #d2528c;
+      margin-bottom: 1rem;
+    }
+
+    .everything-card p {
+      font-size: 1.1rem;
+      color: #804060;
+      line-height: 1.5;
+    }
+
+    .photo-container {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(184, 43, 98, 0.6);
+      margin: 0 auto 2rem;
+      border: 5px solid #ad1457;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-container:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-container:hover img {
+      transform: scale(1.1);
+    }
+
+    #myEverythingSection>p,
+    #keepItSafeSection>p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      font-weight: 500;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Carousel Styles */
+    .carousel-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-container:hover {
+      transform: scale(1.02);
+    }
+
+    .carousel-inner {
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item.active img {
+      transform: scale(1);
+    }
+
+    .carousel-item:not(.active) img {
+      transform: scale(0.95);
+      opacity: 0.7;
+    }
+
+    /* Custom carousel styles */
+    #myFavoritePhotosCarousel.carousel-container,
+    #keepItSafeCarousel.carousel-container {
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.9), 0 0 10px rgba(255, 105, 180, 0.5);
+      border-radius: 1.25rem;
+    }
+
+    #myFavoritePhotosCarousel .carousel-inner img,
+    #keepItSafeCarousel .carousel-inner img {
+      height: 380px;
+    }
+
+    /* Carousel caption animations */
+    .carousel-caption {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.2rem;
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+      font-weight: bold;
+      bottom: 6%;
+      left: 5%;
+      right: 5%;
+      width: 90%;
+      max-width: 90%;
+      transform: translateX(-50%);
+      left: 50%;
+      backdrop-filter: blur(2px);
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+
+    .carousel-item.active .carousel-caption {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .carousel-caption h5 {
+      font-weight: bold;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+      transform: translateY(10px);
+      transition: transform 0.5s ease 0.2s;
+    }
+
+    .carousel-item.active .carousel-caption h5 {
+      transform: translateY(0);
+    }
+
+    .carousel-caption p {
+      font-weight: bold;
+      color: white;
+      font-size: 1rem;
+      transform: translateY(10px);
+      transition: transform 0.5s ease 0.3s;
+    }
+
+    .carousel-item.active .carousel-caption p {
+      transform: translateY(0);
+    }
+
+    /* Custom arrows */
+    #myFavoritePhotosCarousel .carousel-control-prev,
+    #myFavoritePhotosCarousel .carousel-control-next,
+    #keepItSafeCarousel .carousel-control-prev,
+    #keepItSafeCarousel .carousel-control-next {
+      width: 15%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #myFavoritePhotosCarousel:hover .carousel-control-prev,
+    #myFavoritePhotosCarousel:hover .carousel-control-next,
+    #keepItSafeCarousel:hover .carousel-control-prev,
+    #keepItSafeCarousel:hover .carousel-control-next {
+      opacity: 1;
+    }
+
+    #myFavoritePhotosCarousel .carousel-control-prev-icon,
+    #myFavoritePhotosCarousel .carousel-control-next-icon,
+    #keepItSafeCarousel .carousel-control-prev-icon,
+    #keepItSafeCarousel .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff69b4'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+      filter: none;
+      width: 3rem;
+      height: 3rem;
+      transition: transform 0.3s ease;
+    }
+
+    #myFavoritePhotosCarousel .carousel-control-prev-icon:hover,
+    #myFavoritePhotosCarousel .carousel-control-next-icon:hover,
+    #keepItSafeCarousel .carousel-control-prev-icon:hover,
+    #keepItSafeCarousel .carousel-control-next-icon:hover {
+      transform: scale(1.2);
+    }
+
+    #myFavoritePhotosCarousel .carousel-control-next-icon,
+    #keepItSafeCarousel .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff69b4'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+
+    /* Custom indicators */
+    #myFavoritePhotosCarousel .carousel-indicators,
+    #keepItSafeCarousel .carousel-indicators {
+      bottom: -40px;
+      transition: bottom 0.3s ease;
+    }
+
+    #myFavoritePhotosCarousel:hover .carousel-indicators,
+    #keepItSafeCarousel:hover .carousel-indicators {
+      bottom: 10px;
+    }
+
+    #myFavoritePhotosCarousel .carousel-indicators button,
+    #keepItSafeCarousel .carousel-indicators button {
+      background-color: #ffc0cb;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin: 0 6px;
+      border: 2px solid #ff69b4;
+      transition: all 0.3s ease;
+    }
+
+    #myFavoritePhotosCarousel .carousel-indicators button:hover,
+    #keepItSafeCarousel .carousel-indicators button:hover {
+      transform: scale(1.3);
+    }
+
+    #myFavoritePhotosCarousel .carousel-indicators .active,
+    #keepItSafeCarousel .carousel-indicators .active {
+      background-color: #ff69b4;
+      border: 2px solid #d2528c;
+      transform: scale(1.3);
+    }
+
+    #backBtn,
+    #backBtnPhotos,
+    #backBtnKeepItSafe {
+      background-color: #880e4f;
+      color: white;
+      border: none;
+      padding: 0.75rem 2.5rem;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1.5rem;
+    }
+
+    #backBtn:hover,
+    #backBtnPhotos:hover,
+    #backBtnKeepItSafe:hover {
+      background-color: #580833;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(136, 14, 79, 0.4);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem 0;
+      background: #a02c73;
+      color: white;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .floating-emoji {
+      font-size: 2.5rem;
+      position: fixed;
+      bottom: 0;
+      animation: floatUp 4s ease-out forwards;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 2px rgba(160, 44, 115, 0.7));
+      z-index: 9999;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translateY(-120vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes floatUpText {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Slide animations for carousel items */
+    .carousel-item {
+      transition: transform 1s ease, opacity 0.5s ease;
+    }
+
+    .carousel-item-next:not(.carousel-item-start),
+    .active.carousel-item-end {
+      transform: translateX(100%);
+    }
+
+    .carousel-item-prev:not(.carousel-item-end),
+    .active.carousel-item-start {
+      transform: translateX(-100%);
+    }
+
+    /* Fade animation for "My Everything" cards */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* New Keep It Safe Section Styles */
+    #keepItSafeSection {
+      max-width: 900px;
+      background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 2rem 0;
+    }
+
+    .memory-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(142, 36, 170, 0.3);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      aspect-ratio: 1;
+      transform: scale(0.95);
+      opacity: 0;
+      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0.95);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .memory-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .memory-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .memory-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .memory-item:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .memory-item:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .memory-item:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    .memory-item:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(142, 36, 170, 0.4);
+      z-index: 10;
+    }
+
+    .memory-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .memory-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .memory-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .memory-item:hover .memory-caption {
+      transform: translateY(0);
+    }
+
+    .memory-caption h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    }
+
+    .memory-caption p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+
+    .special-message {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 5px 15px rgba(142, 36, 170, 0.2);
+      transform: perspective(1000px) rotateX(5deg);
+      transition: all 0.5s ease;
+    }
+
+    .special-message:hover {
+      transform: perspective(1000px) rotateX(0deg);
+      box-shadow: 0 10px 25px rgba(142, 36, 170, 0.3);
+    }
+
+    .special-message h2 {
+      color: #7b1fa2;
+      margin-bottom: 1rem;
+    }
+
+    .special-message p {
+      color: #4a148c;
+      line-height: 1.6;
+    }
+
+    /* Heart pulse animation */
+    .heart-pulse {
+      animation: pulse 1.5s infinite;
+      display: inline-block;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .locked-btn {
+      opacity: 0.6;
+      pointer-events: none;
+      font-size: 1rem;
+    }
+
+    .unlock-animate {
+      animation: unlockFade 1.2s forwards;
+    }
+
+    @keyframes unlockFade {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.15);
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    /* Shake Animation */
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-6px);
+      }
+
+      50% {
+        transform: translateX(6px);
+      }
+
+      75% {
+        transform: translateX(-6px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .shake {
+      animation: shake 0.4s ease;
+    }
+
+    /* Full Screen Angry Emoji */
+    .angry-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 8rem;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .angry-screen.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header data-aos="fade-down">
+    <h1>Happy Birthday Rajj 🎉 </h1>
+    <p>My bestie , My unpaid photographer , My back passenger</p>
+  </header>
+
+  <section id="mainContent">
+
+    <!-- 🔐 Locked Buttons Initially -->
+    <section class="birthday-card locked-state" data-aos="fade-up" data-aos-delay="200">
+      <h2>To My Bestest Buddy❤️</h2>
+    <p>Cheers to another year babes, always be happy and just let me always drive your Activa and we keep roaming around like this on your Activa, may you achieve all your goals in your life and you get so much money that you can take me to every new place to eat and just keep making me happy like this and my blessings are with you, whatever you wish for, you achieve it in your life, this is my prayer.
+      </p>
+
+      <div class="locked-buttons">
+        <button class="my-everything-btn locked-btn"><span>My Jigarii</span> 🔒</button>
+        <button class="my-everything-btn locked-btn"><span>My Favorite Photos 💖</span> 🔒</button>
+        <button class="my-everything-btn locked-btn"><span>Keep It Safe Forever</span> 🔒</button>
+      </div>
+
+      <!-- ✅ Real Buttons (hidden until unlocked) -->
+      <div class="real-buttons d-none">
+        <a href="javascript:void(0)" id="showMyEverything" class="my-everything-btn" data-aos="zoom-in"
+          data-aos-delay="400">My Everything</a>
+        <a href="javascript:void(0)" id="showMyFavoritePhotos" class="my-everything-btn" data-aos="zoom-in"
+          data-aos-delay="600">My Favorite Photos 💖</a>
+        <a href="javascript:void(0)" id="showKeepItSafe" class="my-everything-btn" data-aos="zoom-in"
+          data-aos-delay="800">Keep It Safe Forever</a>
+      </div>
+    </section>
+
+    <!-- Secret input -->
+    <section id="secret-section" data-aos="fade-up" data-aos-delay="600">
+      <div class="secret-card">
+        <h2>Secret Message 🔐</h2>
+        <p>Enter the secret code to unlock your surprise!</p>
+        <input type="text" id="secretCode" placeholder="Enter secret code" />
+        <div class="text-center">
+          <button class="my-everything-btn" style="margin-top: 1rem;" onclick="unlockSections()">Unlock</button>
+        </div>
+        <div id="unlock-result" class="result-box d-none"></div>
+      </div>
+    </section>
+
+  </section>
+
+
+  <section id="myEverythingSection">
+    <h1 data-aos="fade-down">My bestestest buddy🥰</h1>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;" data-aos="fade-up" data-aos-delay="100">
+      Here's why you mean everything to me...
+    </p>
+
+    <div class="everything-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="photo-container" data-aos="zoom-in" data-aos-delay="300">
+        <img src="rajpro.jpeg" alt="My Everything Photo" />
+      </div>
+      <h2 data-aos="fade-up" data-aos-delay="400">My Dearest Raj</h2>
+      <p data-aos="fade-up" data-aos-delay="500">
+        My Dearest RP
+I don't have just a senior  — I have a forever friend who understands me in ways no one else does. You are more than friend; you are my heart, my joy, my forever. Thank you for being always be my side, my laughter, and my safe place. I love you so so much  beyond words, Rajj
+      </p>
+    </div>
+
+    <div class="everything-card" data-aos="fade-up" data-aos-delay="300">
+      <h2 data-aos="fade-up" data-aos-delay="400">Our Unbreakable Bond 🤝</h2>
+      <p data-aos="fade-up" data-aos-delay="500">
+      
+Through GP and RKU ,
+ laughter and roast, our bond has only grown stronger. You're not just good friend; you're the person I can always count on, my confidente, and my biggest cheerleader. You melted my heart. Here's to many more years of incredible memories together!
+      </p>
+    </div>
+
+    <div class="everything-card" data-aos="fade-up" data-aos-delay="400">
+      <h2 data-aos="fade-up" data-aos-delay="500">Your Amazing Qualities ✨</h2>
+      <p data-aos="fade-up" data-aos-delay="600">
+
+
+I like your gossips, your talks, your habit of roasting me, and especially letting me drive, eating street food with me, going out with me, talking all night long and teasing me, then always supporting me and clearly sharing things with me, I like all these things about you very much.
+      </p>
+    </div>
+
+    <button id="backBtn" data-aos="fade-up" data-aos-delay="700">← Back</button>
+  </section>
+
+  <section id="myFavoritePhotosSection" data-aos="fade-up">
+    <h1 data-aos="fade-down">These are some of my absolute favorite photos of yours that I have and I love them</h1>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;" data-aos="fade-up" data-aos-delay="100">
+      Keep sending me more selfies, pics and mini video of yours coz its make my day.
+    </p>
+
+    <div id="myFavoritePhotosCarousel" class="carousel slide carousel-container" data-bs-ride="carousel"
+      data-aos="zoom-in" data-aos-delay="200">
+      <div class="carousel-indicators" data-aos="fade-up" data-aos-delay="300">
+        <button type="button" data-bs-target="#myFavoritePhotosCarousel" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Photo 1"></button>
+        <button type="button" data-bs-target="#myFavoritePhotosCarousel" data-bs-slide-to="1"
+          aria-label="Photo 2"></button>
+        <button type="button" data-bs-target="#myFavoritePhotosCarousel" data-bs-slide-to="2"
+          aria-label="Photo 3"></button>
+        <button type="button" data-bs-target="#myFavoritePhotosCarousel" data-bs-slide-to="3"
+          aria-label="Photo 4"></button>
+      </div>
+      <div class="carousel-inner" data-aos="fade-up" data-aos-delay="400">
+        <div class="carousel-item active">
+          <img src="raj111.jpg" class="d-block w-100" alt="Favorite Photo 1">
+          <div class="carousel-caption">
+            <h5></h5>
+            <p>Or yaha hum pighal gaye💖</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay muted loop playsinline>
+            <source src="raj222.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="carousel-caption">
+            <h5></h5>
+            <p>Sleeping beauty🥱</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <video class="d-block w-100" autoplay muted loop playsinline>
+            <source src="raj333.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="carousel-caption">
+            <h5></h5>
+            <p>Mine pookie🎀</p>
+          </div>
+        </div>
+            <div class="carousel-item">
+          <img src="raj444.jpeg" class="d-block w-100" alt="Beautiful Memory">
+
+          <div class="carousel-caption">
+            <h5></h5>
+            <p>Rano rana ni rite🤟</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myFavoritePhotosCarousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myFavoritePhotosCarousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <button id="backBtnPhotos" data-aos="fade-up" data-aos-delay="500">← Back</button>
+  </section>
+
+  <!-- New Keep It Safe Section -->
+  <section id="keepItSafeSection">
+    <h1 data-aos="fade-down">YOU ♾️ ME <span class="heart-pulse">❤️</span></h1>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;" data-aos="fade-up" data-aos-delay="100">
+      These precious photos of us are treasures , I'll keep safe in my heart forever and we will click more photos
+      Together <3 </p>
+
+        <div class="special-message" data-aos="zoom-in" data-aos-delay="200">
+          <h2>My Promise to You</h2>
+          <p>
+            No matter where life takes us, these memories will always be my most cherished possessions.
+            Each photo tells a story of our bond that time can never fade. I promise to keep these safe
+            forever, just like I'll always keep you safe in my heart.
+          </p>
+        </div>
+
+        <div class="memory-grid">
+          <div class="memory-item">
+            <img src="raj1.jpeg" alt="Memory 1">
+            <div class="memory-caption">
+              <h3></h3>
+              <p>Sir ji's face is not worth seeing 😂</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="raj2.jpeg" alt="Memory 2">
+            <div class="memory-caption">
+
+              <p>Bhawara & pankhudi in one frame 👀</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="raj3.jpeg" alt="Memory 3">
+            <div class="memory-caption">
+              <p>Vo jo hal hai Tera vahi hal hai meraaa 🥺</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="raj5.jpeg" alt="Memory 4">
+            <div class="memory-caption">
+              <h3></h3>
+              <p>Our unbreakable bond 🧿</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="raj4.jpeg" alt="Memory 5">
+            <div class="memory-caption">
+
+              <p>When Mr. purohitt ji roasting Me 😊</p>
+            </div>
+          </div>
+          <div class="memory-item">
+            <img src="raj6.jpeg" alt="Memory 6">
+            <div class="memory-caption">
+              <p>keep capturing ME 🤩</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="keepItSafeCarousel" class="carousel slide carousel-container" data-bs-ride="carousel"
+          data-aos="zoom-in" data-aos-delay="300">
+          <div class="carousel-indicators" data-aos="fade-up" data-aos-delay="400">
+            <button type="button" data-bs-target="#keepItSafeCarousel" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Photo 1"></button>
+            <button type="button" data-bs-target="#keepItSafeCarousel" data-bs-slide-to="1"
+              aria-label="Photo 2"></button>
+            <button type="button" data-bs-target="#keepItSafeCarousel" data-bs-slide-to="2"
+              aria-label="Photo 3"></button>
+          </div>
+          <div class="carousel-inner" data-aos="fade-up" data-aos-delay="500">
+            <div class="carousel-item active">
+              <video class="d-block w-100" autoplay muted loop playsinline>
+                <source src="raj11.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="carousel-caption">
+                <h5>Our mini Vlog📹</h5>
+                <p></p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <video class="d-block w-100" autoplay muted loop playsinline>
+                <source src="raj22.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="carousel-caption">
+                <h5>Our mini Vlog📹</h5>
+                <p></p>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <video class="d-block w-100" autoplay muted loop playsinline>
+                <source src="raj33.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="carousel-caption">
+                <h5>Our mini Vlog📹</h5>
+                <p></p>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#keepItSafeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#keepItSafeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <button id="backBtnKeepItSafe" data-aos="fade-up" data-aos-delay="600">← Back</button>
+  </section>
+
+  <footer>
+    Made by your love ❤️
+  </footer>
+  <div id="angryScreen" class="angry-screen">😡</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize AOS with custom settings
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-quart',
+      once: false,
+      mirror: true,
+      offset: 120
+    });
+
+    // Custom carousel animations
+    const myCarousel = document.querySelector('#myFavoritePhotosCarousel');
+    const keepItSafeCarousel = document.querySelector('#keepItSafeCarousel');
+
+    function setupCarousel(carouselElement) {
+      if (carouselElement) {
+        carouselElement.addEventListener('slide.bs.carousel', function (e) {
+          const nextItem = e.relatedTarget;
+          const caption = nextItem.querySelector('.carousel-caption');
+          const h5 = caption.querySelector('h5');
+          const p = caption.querySelector('p');
+
+          // Reset animations
+          caption.style.opacity = '0';
+          caption.style.transform = 'translateX(-50%) translateY(20px)';
+          h5.style.transform = 'translateY(10px)';
+          p.style.transform = 'translateY(10px)';
+
+          // Trigger reflow to restart animations
+          void caption.offsetWidth;
+
+          // Apply animations
+          caption.style.opacity = '1';
+          caption.style.transform = 'translateX(-50%) translateY(0)';
+          h5.style.transform = 'translateY(0)';
+          p.style.transform = 'translateY(0)';
+        });
+      }
+    }
+
+    setupCarousel(myCarousel);
+    setupCarousel(keepItSafeCarousel);
+
+    function revealSecret() {
+      const input = document.getElementById('encodedMsg').value.trim();
+      const shiftKey = 3;
+      if (!input) {
+        showResult('Please enter the encoded message.', true);
+        return;
+      }
+      if (!/^([a-z❤️]+)$/.test(input)) {
+        showResult('Invalid input! Use only lowercase letters and ❤️ emoji.', true);
+        return;
+      }
+      let decoded = '';
+      for (let char of input) {
+        if (char === '❤️') {
+          decoded += char;
+        } else {
+          let code = char.charCodeAt(0);
+          if (code >= 97 && code <= 122) {
+            code = ((code - 97 - shiftKey + 26) % 26) + 97;
+            decoded += String.fromCharCode(code);
+          } else {
+            decoded += char;
+          }
+        }
+      }
+      const paragraph = `Here is your secret message: <strong>${decoded}</strong><br><br>` +
+        `And remember: I love you always, my forever best friend. 🎂❤️`;
+      showResult(paragraph, false);
+
+      // Start continuous emoji flow for 6 seconds
+      startContinuousEmojiFlow(['😘', '🎂', '🎉', '🎈', '❤️', '💖'], 6000);
+    }
+
+    function showResult(message, isError) {
+      const resultBox = document.getElementById('result');
+      resultBox.innerHTML = message;
+      resultBox.classList.remove('d-none');
+      resultBox.style.color = isError ? 'red' : 'black';
+    }
+
+    function startContinuousEmojiFlow(emojis, durationMs) {
+      let emojiInterval;
+      let startTime = Date.now();
+
+      function createSingleEmoji() {
+        if (Date.now() - startTime >= durationMs) {
+          clearInterval(emojiInterval);
+          return;
+        }
+
+        const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+        const span = document.createElement('span');
+        span.classList.add('floating-emoji');
+        span.textContent = emoji;
+        const left = Math.random() * 100;
+        span.style.left = `${left}vw`;
+        document.body.appendChild(span);
+
+        span.addEventListener('animationend', () => {
+          span.remove();
+        });
+      }
+
+      emojiInterval = setInterval(createSingleEmoji, 150);
+    }
+
+    // Section navigation
+    document.getElementById('showMyEverything').addEventListener('click', () => {
+      document.getElementById('mainContent').style.display = 'none';
+      document.getElementById('myFavoritePhotosSection').style.display = 'none';
+      document.getElementById('keepItSafeSection').style.display = 'none';
+      document.getElementById('myEverythingSection').style.display = 'block';
+      setTimeout(() => {
+        AOS.refresh();
+        // Add fade-in-up class to all cards
+        document.querySelectorAll('.everything-card').forEach((card, index) => {
+          card.classList.add('fade-in-up');
+          card.style.animationDelay = `${index * 0.2}s`;
+        });
+      }, 100);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('showMyFavoritePhotos').addEventListener('click', () => {
+      document.getElementById('mainContent').style.display = 'none';
+      document.getElementById('myEverythingSection').style.display = 'none';
+      document.getElementById('keepItSafeSection').style.display = 'none';
+      document.getElementById('myFavoritePhotosSection').style.display = 'block';
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('showKeepItSafe').addEventListener('click', () => {
+      document.getElementById('mainContent').style.display = 'none';
+      document.getElementById('myEverythingSection').style.display = 'none';
+      document.getElementById('myFavoritePhotosSection').style.display = 'none';
+      document.getElementById('keepItSafeSection').style.display = 'block';
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('backBtn').addEventListener('click', () => {
+      document.getElementById('myEverythingSection').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('backBtnPhotos').addEventListener('click', () => {
+      document.getElementById('myFavoritePhotosSection').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('backBtnKeepItSafe').addEventListener('click', () => {
+      document.getElementById('keepItSafeSection').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      setTimeout(() => {
+        AOS.refresh();
+      }, 100);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Initialize carousel with custom animation
+    document.addEventListener('DOMContentLoaded', function () {
+      const carousel = new bootstrap.Carousel('#myFavoritePhotosCarousel', {
+        interval: 5000,
+        ride: true
+      });
+
+      const keepItSafeCarousel = new bootstrap.Carousel('#keepItSafeCarousel', {
+        interval: 5000,
+        ride: true
+      });
+    });
+    function unlockSections() {
+      const input = document.getElementById("secretCode").value.trim();
+      const correct = "2000703";
+      const lockedBtns = document.querySelectorAll(".locked-btn");
+      const realBtns = document.querySelector(".real-buttons");
+      const result = document.getElementById("unlock-result");
+      const angry = document.getElementById("angryScreen");
+
+      if (input === correct) {
+        // ✅ Your old unlock code stays same
+        result.classList.remove("d-none");
+        result.innerHTML = "Unlocking... 🔓💖";
+
+        lockedBtns.forEach(btn => btn.classList.add("unlock-animate"));
+
+        setTimeout(() => {
+          document.querySelector(".locked-buttons").style.display = "none";
+          realBtns.classList.remove("d-none");
+          result.innerHTML = "Unlocked Successfully 💕";
+        }, 1300);
+
+      } else {
+        // ❌ Wrong Code Effects
+        result.classList.remove("d-none");
+        result.innerHTML = "Wrong Code 😢 Try again!";
+
+        // Shake Input
+        const inputBox = document.getElementById("secretCode");
+        inputBox.classList.add("shake");
+        setTimeout(() => inputBox.classList.remove("shake"), 400);
+
+        // Angry Full Screen Emoji
+        angry.classList.add("show");
+        setTimeout(() => angry.classList.remove("show"), 1000);
+      }
+    }
+
+  </script>
+</body>
+
+</html>
